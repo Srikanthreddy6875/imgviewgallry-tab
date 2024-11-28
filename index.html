@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Carousel with Modal</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./landing_images/1.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="card">
+        <div class="carousel-container">
+            <div class="main-image-container">
+                <div class="main-image-wrapper">
+                    <img id="mainImage" class="main" src="" alt="Gallery Image">
+                    <button class="totalimage" id="totalImage"></button>
+                    <div class="caption" id="caption"></div>
+                    <button class="nav-button prev" onclick="changeImage(-1, event)" aria-label="Previous Image">❮</button>
+                    <button class="nav-button next" onclick="changeImage(1, event)" aria-label="Next Image">❯</button>
+                </div>
+            </div>
+            <div class="side-thumbnails" id="sideThumbnails"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="imageModal" style="display:none;">
+        <div class="modal-content">
+            <div class="model-content-child">
+                <div class="modal-close" onclick="closeModal()">×</div>
+            </div>
+            <button class="modal-nav modal-prev" onclick="modalChangeImage(-1)" aria-label="Previous Modal Image">❮</button>
+            <button class="modal-nav modal-next" onclick="modalChangeImage(1)" aria-label="Next Modal Image">❯</button>
+            <div class="modal-main-image">
+                <img id="modalMainImage" src="" alt="Full screen image">
+            </div>
+            <div class="model-container">
+                <div class="button-container">
+                    <button class="totalCountimage" id="totalCountImage"></button>
+                    <button class="closeModal-gallery" id="closeModalContainer" onclick="closeGridView()" aria-label="Close Gallery">❮</button>
+                </div>
+                <div class="modal-gallery-container">
+                    <button class="modal-gallery-nav modal-gallery-prev" onclick="scrollModalGallery(-1)" aria-label="Scroll Gallery Left">❮</button>
+                    <button class="modal-gallery-nav modal-gallery-next" onclick="scrollModalGallery(1)" aria-label="Scroll Gallery Right">❯</button>
+                    <div class="modal-gallery" id="modalGallery"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./landing_script.js"></script>
+</body>
+</html>
